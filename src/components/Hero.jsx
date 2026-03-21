@@ -75,7 +75,7 @@ const Hero = () => {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#20A274] opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#15796b]"></span>
             </span>
-            <span className="text-[13px] font-[700] text-[#15796b] dark:text-[#20A274] tracking-wide uppercase">Open to 2027 Opportunities</span>
+            <span className="text-[13px] font-[700] text-[#15796b] dark:text-[#20A274] tracking-wide uppercase">Open to Internships & Opportunities</span>
           </div>
 
           <h1 className="text-[42px] md:text-[54px] lg:text-[60px] font-[900] text-[#2A3B4C] dark:text-gray-100 leading-[1.15] mb-4 tracking-[-0.02em]">

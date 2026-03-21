@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { Award, Briefcase, ExternalLink, ShieldCheck, CheckCircle2, Layers } from 'lucide-react';
+import { Award, Briefcase, ExternalLink, ShieldCheck, CheckCircle2, Layers, X, Calendar, User } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import certificateImg from '../assets/certificate.png';
 import nasscomCertImg from '../assets/nasscom_cert.png';
+import graphTheoryCertImg from '../assets/cert_graph_theory.png';
 import programmingCertImg from '../assets/cert_programming.png';
 import genaiCertImg from '../assets/cert_genai.png';
 import oopCertImg from '../assets/cert_oop.png';
@@ -23,10 +24,20 @@ import infosysGenaiMasterCertImg from '../assets/cert_infosys_genai_master.png';
 
 const Certificates = () => {
   const [activeTab, setActiveTab] = useState('All');
+  const [selectedCert, setSelectedCert] = useState(null);
 
   const categories = ['All', 'Full Stack', 'DSA / Programming', 'Achievements'];
 
   const certifications = [
+    {
+      title: "Graph Theory Programming Camp",
+      issuer: "AlgoUniversity",
+      date: "August 2024",
+      image: graphTheoryCertImg,
+      description: "Participated in the Graphs Programming Camp under the mentorship of Codeforces Master, Manas Kumar Verma and conquering 9 advanced graph problems.",
+      skills: ["Graph Theory", "Algorithms", "Advanced Problem Solving"],
+      category: "DSA / Programming"
+    },
     {
       title: "Course Completion – Infosys",
       issuer: "Infosys Springboard",
@@ -251,7 +262,8 @@ const Certificates = () => {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
               transition={{ duration: 0.4, ease: "easeOut" }}
-              className="flex flex-col bg-white/70 dark:bg-[#0a111a]/80 backdrop-blur-xl rounded-[24px] p-7 border-[1.5px] border-white/50 dark:border-white/5 shadow-lg group hover:border-[#20A274]/40 transition-all duration-500"
+              onClick={() => setSelectedCert(cert)}
+              className="flex flex-col bg-white/70 dark:bg-[#0a111a]/80 backdrop-blur-xl rounded-[24px] p-7 border-[1.5px] border-white/50 dark:border-white/5 shadow-lg group hover:border-[#20A274]/40 transition-all duration-500 cursor-pointer hover:scale-[1.02] hover:shadow-[0_20px_40px_rgba(32,162,116,0.1)]"
             >
               <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden mb-6 border border-gray-100 dark:border-gray-800 shadow-inner group-hover:border-[#20A274]/30 transition-colors">
                 
@@ -262,9 +274,9 @@ const Certificates = () => {
                 </div>
 
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10 flex items-center justify-center p-4">
-                  <a href={cert.image} target="_blank" rel="noopener noreferrer" className="px-8 py-3 bg-white/10 backdrop-blur-md rounded-full text-white font-[800] text-[14px] border border-white/30 hover:bg-white/20 transition-all flex items-center gap-2">
-                    <ExternalLink size={18} /> Full View
-                  </a>
+                  <span className="px-8 py-3 bg-white/10 backdrop-blur-md rounded-full text-white font-[800] text-[14px] border border-white/30 hover:bg-white/20 transition-all flex items-center gap-2">
+                    <ExternalLink size={18} /> View Details
+                  </span>
                 </div>
                 <img 
                   src={cert.image} 
@@ -275,33 +287,140 @@ const Certificates = () => {
 
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-lg bg-[#E9F7F2] dark:bg-[#112a23] flex items-center justify-center text-[#20A274] shadow-sm">
+                  <div className="w-10 h-10 rounded-lg bg-[#E9F7F2] dark:bg-[#112a23] flex items-center justify-center text-[#20A274] shadow-sm group-hover:rotate-12 transition-transform duration-300">
                     <Award size={22} />
                   </div>
                   <div>
-                    <h3 className="text-[19px] font-[800] text-[#2A3B4C] dark:text-white leading-tight">
+                    <h3 className="text-[19px] font-[800] text-[#2A3B4C] dark:text-white leading-tight group-hover:text-[#20A274] transition-colors">
                       {cert.title}
                     </h3>
                     <p className="text-[#20A274] font-bold text-[13px]">{cert.issuer}</p>
                   </div>
                 </div>
 
-                <p className="text-[#556987] dark:text-gray-300 text-[14px] leading-[1.7] font-medium mb-6">
+                <p className="text-[#556987] dark:text-gray-300 text-[14px] leading-[1.7] font-medium mb-6 line-clamp-2">
                   {cert.description}
                 </p>
 
                 <div className="flex flex-wrap gap-2 pt-6 border-t border-gray-100 dark:border-gray-800/60 mt-auto">
-                  {cert.skills.map((skill, idx) => (
+                  {cert.skills.slice(0, 3).map((skill, idx) => (
                     <span key={idx} className="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-[#E9F7F2] dark:bg-gray-800/40 border border-[#20A274]/20 text-[#20A274] text-[12px] font-bold">
                       <CheckCircle2 size={12} /> {skill}
                     </span>
                   ))}
+                  {cert.skills.length > 3 && (
+                    <span className="px-3 py-1.5 rounded-lg bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 text-gray-500 text-[12px] font-bold">
+                      +{cert.skills.length - 3}
+                    </span>
+                  )}
                 </div>
               </div>
             </motion.div>
           ))}
         </AnimatePresence>
       </motion.div>
+
+      {/* Certificate Modal Overlay */}
+      <AnimatePresence>
+        {selectedCert && (
+          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8">
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setSelectedCert(null)}
+              className="absolute inset-0 bg-black/80 backdrop-blur-md"
+            ></motion.div>
+            
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.9, y: 20 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              className="relative w-full max-w-[1000px] bg-white dark:bg-[#0a111a] rounded-[32px] overflow-hidden shadow-2xl border border-white/20 dark:border-white/5 z-10"
+            >
+              <button 
+                onClick={() => setSelectedCert(null)}
+                className="absolute top-6 right-6 z-30 p-2 rounded-full bg-black/20 hover:bg-black/40 text-white transition-colors"
+                aria-label="Close modal"
+              >
+                <X size={24} />
+              </button>
+
+              <div className="flex flex-col lg:flex-row h-full max-h-[90vh] overflow-y-auto lg:overflow-hidden">
+                <div className="w-full lg:w-[60%] bg-gray-100 dark:bg-[#070e17] flex items-center justify-center p-4 lg:p-0 border-b lg:border-b-0 lg:border-r border-gray-100 dark:border-gray-800">
+                  <img 
+                    src={selectedCert.image} 
+                    alt={selectedCert.title} 
+                    className="max-w-full max-h-[500px] lg:max-h-full object-contain shadow-2xl"
+                  />
+                </div>
+
+                <div className="w-full lg:w-[40%] p-8 lg:p-10 flex flex-col bg-white dark:bg-[#0a111a]">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="px-3 py-1 rounded-full bg-[#20A274]/10 text-[#20A274] text-[11px] font-black uppercase tracking-widest border border-[#20A274]/20 flex items-center gap-1.5">
+                      <Layers size={12} />
+                      {selectedCert.category}
+                    </span>
+                  </div>
+
+                  <h3 className="text-[28px] font-black text-[#2A3B4C] dark:text-white leading-tight mb-4">
+                    {selectedCert.title}
+                  </h3>
+
+                  <div className="flex flex-col gap-4 mb-8">
+                    <div className="flex items-center gap-3 text-[#556987] dark:text-gray-400">
+                      <div className="w-10 h-10 rounded-xl bg-gray-50 dark:bg-gray-800/50 flex items-center justify-center text-[#20A274]">
+                        <Briefcase size={20} />
+                      </div>
+                      <div>
+                        <p className="text-[12px] font-black uppercase tracking-widest opacity-60">Platform</p>
+                        <p className="text-[15px] font-bold text-[#2A3B4C] dark:text-gray-200">{selectedCert.issuer}</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-center gap-3 text-[#556987] dark:text-gray-400">
+                      <div className="w-10 h-10 rounded-xl bg-gray-50 dark:bg-gray-800/50 flex items-center justify-center text-[#3197be]">
+                        <Calendar size={20} />
+                      </div>
+                      <div>
+                        <p className="text-[12px] font-black uppercase tracking-widest opacity-60">Issued Date</p>
+                        <p className="text-[15px] font-bold text-[#2A3B4C] dark:text-gray-200">{selectedCert.date}</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="mb-8 overflow-y-auto max-h-[150px] lg:max-h-none">
+                    <p className="text-[12px] font-black uppercase tracking-widest text-[#819ab7] dark:text-gray-500 mb-3">Description</p>
+                    <p className="text-[#556987] dark:text-gray-300 text-[15px] leading-relaxed font-medium">
+                      {selectedCert.description}
+                    </p>
+                  </div>
+
+                  <div className="mt-auto pt-8 border-t border-gray-100 dark:border-gray-800/60">
+                    <div className="flex gap-4">
+                      <a 
+                        href={selectedCert.image} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="flex-1 bg-gradient-to-r from-[#1C8F65] to-[#20A274] text-white px-6 py-4 rounded-2xl font-black text-[14px] tracking-wider flex items-center justify-center gap-2 hover:scale-[1.03] transition-all shadow-[0_10px_20px_rgba(32,162,116,0.2)]"
+                      >
+                        <ExternalLink size={18} /> Full Image
+                      </a>
+                      <button 
+                        onClick={() => setSelectedCert(null)}
+                        className="px-6 py-4 rounded-2xl border border-gray-200 dark:border-gray-700 text-[#2A3B4C] dark:text-gray-200 font-black text-[14px] hover:bg-gray-50 dark:hover:bg-gray-800 transition-all"
+                      >
+                        Close
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };

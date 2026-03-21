@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import FeatureCards from './components/Features';
@@ -11,9 +12,18 @@ import Certificates from './components/Certificates';
 import Achievements from './components/Achievements';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Loader from './components/Loader';
 
 function App() {
   const { pathname, hash } = useLocation();
+  const [isLoading, setIsLoading] = useState(() => {
+    return !sessionStorage.getItem('hasSeenLoader');
+  });
+
+  const handleLoaderFinish = () => {
+    setIsLoading(false);
+    sessionStorage.setItem('hasSeenLoader', 'true');
+  };
 
   useEffect(() => {
     if (hash) {
@@ -26,7 +36,19 @@ function App() {
     }
   }, [pathname, hash]);
   return (
-    <div className="relative overflow-x-hidden min-h-screen text-[#2A3B4C] dark:text-gray-200 transition-colors duration-300">
+    <>
+      <AnimatePresence mode="wait">
+        {isLoading && (
+          <Loader key="loader" finishLoading={handleLoaderFinish} />
+        )}
+      </AnimatePresence>
+
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 0.2 }}
+        className="relative overflow-x-hidden min-h-screen text-[#2A3B4C] dark:text-gray-200 transition-colors duration-300"
+      >
       {/* Background abstract decorations */}
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
         <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-gradient-to-br from-[#e6f4ff] to-transparent rounded-full blur-3xl opacity-70"></div>
@@ -66,7 +88,8 @@ function App() {
           <Footer />
         </main>
       </div>
-    </div>
+    </motion.div>
+    </>
   );
 }
 
