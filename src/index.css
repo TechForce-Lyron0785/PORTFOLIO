@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans antialiased text-[#2A3B4C] dark:text-gray-200 transition-colors duration-300;
+    background-color: #F2F9F9;
+    /* Very soft greenish/blue background */
+    background-image:
+      radial-gradient(circle at 10% 20%, rgba(230, 244, 255, 0.8) 0%, transparent 40%),
+      radial-gradient(circle at 90% 80%, rgba(200, 230, 220, 0.5) 0%, transparent 40%);
+  }
+
+  /* Dark mode background overrides - Futuristic */
+  html.dark body {
+    background-color: #050a12;
+    background-image:
+      radial-gradient(circle at 15% 10%, rgba(28, 143, 101, 0.15) 0%, transparent 45%),
+      radial-gradient(circle at 85% 90%, rgba(30, 64, 175, 0.15) 0%, transparent 45%),
+      radial-gradient(circle at 50% 50%, rgba(28, 143, 101, 0.05) 0%, transparent 60%);
+  }
+}
+
+.gradient-text-teal {
+  background: linear-gradient(to right, #249d8b, #15796b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-blue {
+  background: linear-gradient(to right, #50bce5, #3197be);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-teal-gradient-custom {
+  background: linear-gradient(to right, #249d8b, #15796b);
+}
+
+.card-shadow {
+  box-shadow: 0 20px 50px -10px rgba(36, 157, 139, 0.15), 0 0 20px rgba(0, 0, 0, 0.03);
+}
+
+.bullet-dot {
+  position: relative;
+}
+
+.bullet-dot::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #249d8b;
+}
+
+.decorative-dots {
+  background-image: radial-gradient(#a3cfcc 2px, transparent 2px);
+  background-size: 16px 16px;
+}
