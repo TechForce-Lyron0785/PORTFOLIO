@@ -1,19 +1,19 @@
-import React, { useEffect } from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect } from "react";
+import { motion } from "framer-motion";
 
 const Loader = ({ finishLoading }) => {
   useEffect(() => {
     // Lock scroll while loading
-    document.body.style.overflow = 'hidden';
-    
+    document.body.style.overflow = "hidden";
+
     // Set a timer to finish loading after the animation is complete
     const timer = setTimeout(() => {
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = "auto";
       finishLoading();
     }, 3500); // Premium loader duration optimized to 3.5s
 
     return () => {
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = "auto";
       clearTimeout(timer);
     };
   }, [finishLoading]);
@@ -27,12 +27,12 @@ const Loader = ({ finishLoading }) => {
     >
       {/* Premium Gradient Background Layer */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(32,162,116,0.15)_0%,rgba(7,14,23,1)_70%)] opacity-80 z-0"></div>
-      
+
       {/* Background Grid - extra subtle premium feel */}
       <div className="absolute inset-0 z-0 opacity-[0.05] pointer-events-none">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#20A274_1px,transparent_1px),linear-gradient(to_bottom,#20A274_1px,transparent_1px)] bg-[size:40px_40px]"></div>
       </div>
-      
+
       <div className="relative z-10 flex flex-col items-center">
         {/* Logo Animation */}
         <motion.div
@@ -50,28 +50,39 @@ const Loader = ({ finishLoading }) => {
 
           {/* Hexagon/Rounded-xl Branding Box (Matches Navbar) */}
           <div className="relative z-20 w-32 h-32 bg-gradient-to-br from-[#0a151f] to-[#070e17] rounded-[40px] flex items-center justify-center border border-white/10 shadow-[0_20px_50px_rgba(32,162,116,0.4)] overflow-hidden">
-            <svg viewBox="0 0 100 100" className="w-20 h-20 mx-auto drop-shadow-[0_0_10px_rgba(32,162,116,0.3)]">
-              <path d="M50 0 L93.3 25 L93.3 75 L50 100 L6.7 75 L6.7 25 Z" fill="#20A274" />
+            <svg
+              viewBox="0 0 100 100"
+              className="w-20 h-20 mx-auto drop-shadow-[0_0_10px_rgba(32,162,116,0.3)]"
+            >
+              <path
+                d="M50 0 L93.3 25 L93.3 75 L50 100 L6.7 75 L6.7 25 Z"
+                fill="#20A274"
+              />
               <path d="M50 0 L50 100 L6.7 75 L6.7 25 Z" fill="#1C8F65" />
             </svg>
-            <span className="absolute inset-0 flex items-center justify-center pointer-events-none text-white font-[900] text-[2.2rem] select-none tracking-tighter" style={{marginLeft: '-1px'}}>H</span>
-            
+            <span
+              className="absolute inset-0 flex items-center justify-center pointer-events-none text-white font-[900] text-[2.2rem] select-none tracking-tighter"
+              style={{ marginLeft: "-1px" }}
+            >
+              H
+            </span>
+
             {/* Animated Shine */}
             <motion.div
-              animate={{ 
+              animate={{
                 left: ["-100%", "200%"],
-                opacity: [0, 1, 0]
+                opacity: [0, 1, 0],
               }}
-              transition={{ 
-                duration: 2, 
-                repeat: Infinity, 
+              transition={{
+                duration: 2,
+                repeat: Infinity,
                 repeatDelay: 1,
-                ease: "easeInOut" 
+                ease: "easeInOut",
               }}
               className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 pointer-events-none"
             />
           </div>
-          
+
           {/* Orbiting particles (subtle detail) */}
           <motion.div
             animate={{ rotate: 360 }}
@@ -89,17 +100,17 @@ const Loader = ({ finishLoading }) => {
             className="flex items-center gap-3"
           >
             <h2 className="text-[26px] md:text-[32px] font-[900] text-white tracking-[0.3em] uppercase">
-Himanshu <span className="text-[#20A274]">Shekhar</span>
+              Viktor <span className="text-[#20A274]">Majewski</span>
             </h2>
           </motion.div>
-          
+
           <motion.div
             initial={{ width: 0 }}
             animate={{ width: "100%" }}
             transition={{ delay: 2.2, duration: 1.2 }}
             className="h-[2px] bg-gradient-to-r from-transparent via-[#20A274] to-transparent mt-4 opacity-60"
           />
-          
+
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
