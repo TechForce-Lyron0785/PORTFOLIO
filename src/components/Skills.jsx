@@ -1,55 +1,57 @@
 import React, { useState } from 'react';
 
 const getIcon = (url, fallback) => {
-  return <img src={url} alt={fallback} className="w-10 h-10 object-contain drop-shadow-sm" onError={(e) => { e.target.style.display='none'; e.target.nextSibling.style.display='block'; }} />;
+  return <img src={url} alt={fallback} className="w-10 h-10 object-contain drop-shadow-sm" onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block'; }} />;
 };
 
 const skillsData = [
   // Languages
-  { category: 'Languages', name: 'C++', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg' },
-  { category: 'Languages', name: 'Python', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg' },
-  { category: 'Languages', name: 'C', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg' },
-  { category: 'Languages', name: 'Java', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg' },
   { category: 'Languages', name: 'JavaScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg' },
-  { category: 'Languages', name: 'PHP', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg' },
   { category: 'Languages', name: 'TypeScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg' },
-  
+
   // Frontend
+  { category: 'Frontend', name: 'React.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg' },
+  { category: 'Frontend', name: 'Next.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg' },
+  { category: 'Frontend', name: 'Vue.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg' },
   { category: 'Frontend', name: 'HTML5', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg' },
   { category: 'Frontend', name: 'CSS3', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg' },
-  { category: 'Frontend', name: 'React.js (Vite)', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg' },
-  { category: 'Frontend', name: 'Next.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg' },
   { category: 'Frontend', name: 'Tailwind CSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg' },
-  { category: 'Frontend', name: 'Bootstrap', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg' },
 
   // Backend
   { category: 'Backend', name: 'Node.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg' },
   { category: 'Backend', name: 'Express.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg' },
-  { category: 'Backend', name: 'Laravel', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg' },
+  { category: 'Backend', name: 'GraphQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/graphql/graphql-plain.svg' },
+  { category: 'Backend', name: 'REST APIs', icon: 'https://cdn-icons-png.flaticon.com/512/2165/2165004.png' },
 
-  // Tools & Core
-  { category: 'Tools & Core', name: 'MongoDB', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg' },
-  { category: 'Tools & Core', name: 'MySQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg' },
-  { category: 'Tools & Core', name: 'Git', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg' },
-  { category: 'Tools & Core', name: 'GitHub', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg' },
-  { category: 'Tools & Core', name: 'VS Code', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg' },
-  { category: 'Tools & Core', name: 'Postman', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg' },
-  { category: 'Tools & Core', name: 'Render', icon: 'https://cdn.iconscout.com/icon/free/png-256/free-render-logo-icon-download-in-svg-png-gif-file-formats--brand-brands-logos-icons-3629007.png' },
+  // Databases
+  { category: 'Databases', name: 'PostgreSQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg' },
+  { category: 'Databases', name: 'MongoDB', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg' },
+  { category: 'Databases', name: 'MySQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg' },
+  { category: 'Databases', name: 'Redis', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-original.svg' },
+  { category: 'Databases', name: 'SQL Server', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoftsqlserver/microsoftsqlserver-plain.svg' },
 
-  // Core CS
-  { category: 'Tools & Core', name: 'Data Structures & Algorithms', icon: 'https://cdn-icons-png.flaticon.com/512/8112/8112705.png' },
-  { category: 'Tools & Core', name: 'Object-Oriented Programming', icon: 'https://cdn-icons-png.flaticon.com/512/4248/4248301.png' },
-  { category: 'Tools & Core', name: 'DBMS', icon: 'https://cdn-icons-png.flaticon.com/512/10051/10051268.png' },
-  { category: 'Tools & Core', name: 'Operating Systems', icon: 'https://cdn-icons-png.flaticon.com/512/2000/2000412.png' },
-  { category: 'Tools & Core', name: 'System Design', icon: 'https://cdn-icons-png.flaticon.com/512/7991/7991055.png' }
+  // Cloud & DevOps
+  { category: 'Cloud & DevOps', name: 'Docker', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg' },
+  { category: 'Cloud & DevOps', name: 'Kubernetes', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-plain.svg' },
+  { category: 'Cloud & DevOps', name: 'AWS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg' },
+  { category: 'Cloud & DevOps', name: 'Azure', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg' },
+  { category: 'Cloud & DevOps', name: 'GitHub Actions', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg' },
+  { category: 'Cloud & DevOps', name: 'Git', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg' },
+
+  // Testing & Architecture
+  { category: 'Tools & Core', name: 'Jest', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jest/jest-plain.svg' },
+  { category: 'Tools & Core', name: 'Cypress', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cypressio/cypressio-original.svg' },
+  { category: 'Tools & Core', name: 'Microservices', icon: 'https://cdn-icons-png.flaticon.com/512/7991/7991055.png' },
+  { category: 'Tools & Core', name: 'JWT / OAuth2', icon: 'https://cdn-icons-png.flaticon.com/512/6911/6911701.png' },
+  { category: 'Tools & Core', name: 'OWASP Security', icon: 'https://cdn-icons-png.flaticon.com/512/2092/2092757.png' },
 ];
 
-const categories = ['All', 'Frontend', 'Backend', 'Languages', 'Tools & Core'];
+const categories = ['All', 'Frontend', 'Backend', 'Languages', 'Databases', 'Cloud & DevOps', 'Tools & Core'];
 
 const Skills = () => {
   const [activeCategory, setActiveCategory] = useState('All');
 
-  const filteredSkills = skillsData.filter(skill => 
+  const filteredSkills = skillsData.filter(skill =>
     activeCategory === 'All' ? true : skill.category === activeCategory
   );
 
@@ -75,11 +77,10 @@ const Skills = () => {
           <button
             key={i}
             onClick={() => setActiveCategory(cat)}
-            className={`px-6 py-2.5 rounded-full font-[700] text-[14px] tracking-wide transition-all duration-300 border shadow-sm ${
-              activeCategory === cat
-                ? 'bg-gradient-to-r from-[#1C8F65] to-[#20A274] text-white border-transparent shadow-[0_0_15px_rgba(32,162,116,0.4)]'
-                : 'bg-white/70 dark:bg-[#0f172a]/70 text-[#556987] dark:text-gray-300 border-gray-200 dark:border-gray-700/50 hover:border-[#20A274]/50 hover:text-[#15796b] dark:hover:text-[#5FB3A7] backdrop-blur-md'
-            }`}
+            className={`px-6 py-2.5 rounded-full font-[700] text-[14px] tracking-wide transition-all duration-300 border shadow-sm ${activeCategory === cat
+              ? 'bg-gradient-to-r from-[#1C8F65] to-[#20A274] text-white border-transparent shadow-[0_0_15px_rgba(32,162,116,0.4)]'
+              : 'bg-white/70 dark:bg-[#0f172a]/70 text-[#556987] dark:text-gray-300 border-gray-200 dark:border-gray-700/50 hover:border-[#20A274]/50 hover:text-[#15796b] dark:hover:text-[#5FB3A7] backdrop-blur-md'
+              }`}
           >
             {cat}
           </button>

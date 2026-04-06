@@ -10,10 +10,10 @@ const cards = [
     items: ['Programming', 'Web Development', 'Tools & Technologies'],
   },
   {
-    title: 'TRAINING',
+    title: 'EXPERIENCE',
     path: '/training',
     icon: <MonitorPlay className="text-[#51b36d]" size={36} />,
-    items: ['Online Courses', 'Workshops & Internships', 'Training Programs'],
+    items: ['Current Role', 'Previous Companies', 'Key Achievements'],
   },
   {
     title: 'EDUCATION',
@@ -70,7 +70,7 @@ const FeatureCards = () => {
               ))}
             </ul>
 
-            <Link 
+            <Link
               to={card.path}
               className="absolute -bottom-6 bg-gradient-to-r from-[#68c6b7] to-[#51b36d] dark:from-[#1C8F65] dark:to-[#20A274] text-white px-8 py-3.5 rounded-full font-[800] flex items-center justify-center gap-2 shadow-[0_8px_20px_-6px_rgba(36,157,139,0.5)] dark:shadow-[0_0_15px_rgba(32,162,116,0.3)] opacity-90 hover:opacity-100 hover:scale-105 transition-all w-[65%] max-w-[200px] text-[13px] tracking-wider z-10 border border-white/20"
             >

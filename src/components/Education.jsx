@@ -3,29 +3,30 @@ import { GraduationCap, Calendar, MapPin, Award, CheckCircle2, School } from 'lu
 
 const Education = () => {
   const mainEducation = {
-    degree: "Bachelor of Technology in Computer Science & Engineering",
-    institution: "Lovely Professional University (LPU)",
-    duration: "2023 – 2027",
-    description: "Focusing on core computer science principles, data structures and algorithms, operating systems, database management systems and full-stack web development.",
+    degree: "Bachelor's Degree in Computer Science",
+    institution: "Poznan University of Technology",
+    duration: "2011 – 2015",
+    description: "Studied core computer science principles including algorithms, data structures, software engineering, databases, and distributed systems. Built a strong foundation that underpins a decade of professional full-stack development.",
     achievements: [
-      "Maintained a strong CGPA (7.5)",
-      "Active member of coding clubs",
-      "Participated in hackathons"
+      "Graduated with a CS degree",
+      "Focus on software engineering",
+      "Distributed systems coursework"
     ]
   };
 
   const schoolEducation = [
     {
-      level: "12th Grade (Intermediate)",
-      institution: "DNY College, Bihar",
-      year: "2022",
-      subjects: "Physics, Chemistry, Mathematics, Computer Science",
+      level: "Senior Full Stack Developer",
+      institution: "Transform Agency — Warsaw, Poland (Remote)",
+      year: "2023–Now",
+      subjects: "React, Node.js, TypeScript, GraphQL, PostgreSQL, MongoDB, Docker, GitHub Actions",
       icon: <School className="w-5 h-5" />
     },
     {
-      level: "10th Grade (Matriculation)",
-      institution: "Regional Secondary School, Bihar",
-      year: "2020",
+      level: "Full Stack Developer",
+      institution: "Netguru — Poznan, Poland",
+      year: "2019–2022",
+      subjects: "React, Node.js, TypeScript, Next.js, PostgreSQL, Docker, CI/CD",
       icon: <School className="w-5 h-5" />
     }
   ];
@@ -36,10 +37,10 @@ const Education = () => {
       {/* Page Title Section */}
       <div className="text-center mb-16 relative w-full flex flex-col items-center">
         <h2 className="text-[44px] md:text-[54px] font-[900] text-[#2A3B4C] dark:text-gray-100 tracking-[-0.02em] leading-tight drop-shadow-sm">
-          Academic <span className="bg-gradient-to-r from-[#1C8F65] via-[#20A274] to-[#3197be] text-transparent bg-clip-text">Background</span>
+          Education & <span className="bg-gradient-to-r from-[#1C8F65] via-[#20A274] to-[#3197be] text-transparent bg-clip-text">Experience</span>
         </h2>
         <p className="mt-4 text-[#556987] dark:text-gray-300 text-[17px] font-[500] leading-[1.6] text-center max-w-[600px]">
-          My educational journey and academic achievements in the field of Computer Science
+          My academic background and professional journey in software development
         </p>
       </div>
 
@@ -109,7 +110,7 @@ const Education = () => {
               </p>
               {edu.subjects && (
                 <p className="text-[#819ab7] dark:text-gray-500 text-[13px] mt-4 font-medium italic border-t border-gray-100 dark:border-gray-800/60 pt-3">
-                  <span className="font-bold uppercase text-[11px] tracking-wider text-[#15796b] dark:text-[#20A274] not-italic block mb-1">Key Subjects:</span>
+                  <span className="font-bold uppercase text-[11px] tracking-wider text-[#15796b] dark:text-[#20A274] not-italic block mb-1">Key Stack:</span>
                   {edu.subjects}
                 </p>
               )}

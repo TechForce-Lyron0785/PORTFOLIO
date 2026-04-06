@@ -5,7 +5,7 @@ import { Link, useLocation } from 'react-router-dom';
 const navLinks = [
   { name: 'HOME', path: '/' },
   { name: 'SKILLS', path: '/skills' },
-  { name: 'TRAINING', path: '/training' },
+  { name: 'EXPERIENCE', path: '/training' },
   { name: 'EDUCATION', path: '/education' },
   { name: 'PROJECTS', path: '/projects' },
   { name: 'CERTIFICATES', path: '/certificates' },
@@ -54,10 +54,10 @@ const Navbar = () => {
               <path d="M50 0 L93.3 25 L93.3 75 L50 100 L6.7 75 L6.7 25 Z" fill="#20A274" />
               <path d="M50 0 L50 100 L6.7 75 L6.7 25 Z" fill="#1C8F65" />
             </svg>
-            <span className="absolute text-white font-bold text-2xl font-sans" style={{ marginLeft: '-1px' }}>H</span>
+            <span className="absolute text-white font-bold text-2xl font-sans" style={{ marginLeft: '-1px' }}>V</span>
           </div>
           <div className="flex flex-col -ml-1 mt-0.5">
-            <span className="text-[26px] font-bold text-[#15796b] dark:text-[#20A274] leading-[1.1] tracking-wide drop-shadow-[0_0_8px_rgba(32,162,116,0.2)]">Himanshu</span>
+            <span className="text-[26px] font-bold text-[#15796b] dark:text-[#20A274] leading-[1.1] tracking-wide drop-shadow-[0_0_8px_rgba(32,162,116,0.2)]">Viktor</span>
             <span className="text-[14px] font-[700] text-gray-500 tracking-[0.22em] leading-[1.1] ml-[2px] dark:text-gray-400">PORTFOLIO</span>
           </div>
         </Link>
@@ -71,20 +71,21 @@ const Navbar = () => {
               const isPageRoute = link.path === '/skills' || link.path === '/training' || link.path === '/education' || link.path === '/projects' || link.path === '/certificates' || link.path === '/achievements' || link.path === '/contact';
               const isActive = (isPageRoute && location.pathname === link.path) || (!isPageRoute && location.pathname === '/' && location.hash === link.path.replace('/', '')) || (link.path === '/' && location.pathname === '/' && !location.hash);
               return (
-              <Link
-                key={link.name}
-                to={link.path}
-                className={`relative py-1 transition-all duration-300 ${isActive
-                  ? 'text-[#15796b] dark:text-[#20A274] drop-shadow-[0_0_10px_rgba(32,162,116,0.4)]'
-                  : 'text-[#556987] dark:text-gray-300 hover:text-[#15796b] dark:hover:text-white'
-                  }`}
-              >
-                {link.name}
-                {isActive && (
-                  <span className="absolute bottom-[-6px] left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-[#15796b] dark:bg-[#20A274] shadow-[0_0_8px_rgba(32,162,116,0.8)]"></span>
-                )}
-              </Link>
-            )})}
+                <Link
+                  key={link.name}
+                  to={link.path}
+                  className={`relative py-1 transition-all duration-300 ${isActive
+                    ? 'text-[#15796b] dark:text-[#20A274] drop-shadow-[0_0_10px_rgba(32,162,116,0.4)]'
+                    : 'text-[#556987] dark:text-gray-300 hover:text-[#15796b] dark:hover:text-white'
+                    }`}
+                >
+                  {link.name}
+                  {isActive && (
+                    <span className="absolute bottom-[-6px] left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-[#15796b] dark:bg-[#20A274] shadow-[0_0_8px_rgba(32,162,116,0.8)]"></span>
+                  )}
+                </Link>
+              )
+            })}
           </div>
 
           {/* Desktop Actions */}
@@ -97,8 +98,8 @@ const Navbar = () => {
               {isDark ? <Sun size={18} /> : <Moon size={18} />}
             </button>
 
-            <a 
-              href="https://drive.google.com/uc?export=download&id=1hpUWAvF57_7gyDJK1QCbc6JMXVYlHQZh" 
+            <a
+              href="https://drive.google.com/uc?export=download&id=1hpUWAvF57_7gyDJK1QCbc6JMXVYlHQZh"
               download="GeneralCv12318302.pdf"
               className="bg-gradient-to-r from-[#1C8F65] to-[#20A274] text-white px-5 py-2.5 rounded-xl hover:scale-105 transition-all duration-300 font-bold text-sm flex items-center gap-2 shadow-[0_0_20px_rgba(28,143,101,0.4)] border border-[#20A274]/50"
             >
@@ -139,8 +140,8 @@ const Navbar = () => {
               {link.name}
             </Link>
           ))}
-          <a 
-            href="https://drive.google.com/uc?export=download&id=1hpUWAvF57_7gyDJK1QCbc6JMXVYlHQZh" 
+          <a
+            href="https://drive.google.com/uc?export=download&id=1hpUWAvF57_7gyDJK1QCbc6JMXVYlHQZh"
             download="GeneralCv12318302.pdf"
             className="bg-gradient-to-r from-[#1C8F65] to-[#20A274] text-white px-5 py-3.5 rounded-xl w-full flex items-center justify-center gap-2 mt-4 font-bold text-sm shadow-[0_0_15px_rgba(28,143,101,0.3)]"
           >

@@ -52,7 +52,7 @@ const Hero = () => {
             <div className="w-full h-full rounded-full border-[10px] border-[#F2F9F9] dark:border-[#0e1526] overflow-hidden bg-white dark:bg-[#0f172a] shadow-inner flex items-center justify-center relative">
               <img
                 src={profileImg}
-                alt="Himanshu Shekhar"
+                alt="Viktor Majewski"
                 className="w-full h-full object-cover object-center scale-[1.03] transition-transform duration-700 hover:scale-[1.08]"
               />
             </div>
@@ -75,34 +75,34 @@ const Hero = () => {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#20A274] opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#15796b]"></span>
             </span>
-            <span className="text-[13px] font-[700] text-[#15796b] dark:text-[#20A274] tracking-wide uppercase">Open to Internships & Opportunities</span>
+            <span className="text-[13px] font-[700] text-[#15796b] dark:text-[#20A274] tracking-wide uppercase">Open to New Opportunities</span>
           </div>
 
           <h1 className="text-[42px] md:text-[54px] lg:text-[60px] font-[900] text-[#2A3B4C] dark:text-gray-100 leading-[1.15] mb-4 tracking-[-0.02em]">
             Hi, I'm <br className="hidden lg:block" />
-            <span className="bg-gradient-to-r from-[#1C8F65] via-[#20A274] to-[#3197be] dark:from-[#20A274] dark:to-[#4bb2df] text-transparent bg-clip-text drop-shadow-sm">Himanshu Shekhar</span>
+            <span className="bg-gradient-to-r from-[#1C8F65] via-[#20A274] to-[#3197be] dark:from-[#20A274] dark:to-[#4bb2df] text-transparent bg-clip-text drop-shadow-sm">Viktor Majewski</span>
           </h1>
 
           {/* Subheading with Typing Animation */}
           <h2 className="text-[22px] md:text-[28px] font-bold text-[#556987] dark:text-gray-300 tracking-wide h-[36px] md:h-[42px] my-2">
-            I am a <Typewriter words={['Full Stack Developer', 'MERN Stack Developer', 'Problem Solver']} />
+            I am a <Typewriter words={['Senior Full-Stack Developer', 'React & Node.js Expert', 'Microservices Architect']} />
           </h2>
 
           <p className="mt-6 text-[#556987] dark:text-gray-300 text-[16px] md:text-[17px] leading-[1.7] max-w-[95%] md:max-w-[90%] font-medium">
-            B.Tech CSE student specializing in building scalable, high-performance web applications using the <strong className="text-[#15796b] dark:text-[#5FB3A7]">MERN stack</strong>. Strong foundation in Data Structures & Algorithms with a focus on clean, efficient, and maintainable code.
+            Senior Full-Stack Developer with <strong className="text-[#15796b] dark:text-[#5FB3A7]">10 years of experience</strong> building scalable web applications. Specialized in React, Node.js, TypeScript, microservices, and cloud deployments for enterprise-scale products.
           </p>
 
           {/* Stats Section */}
           <div className="mt-8 grid grid-cols-3 gap-3 md:gap-4 w-full max-w-[500px]">
             <div className="flex flex-col items-center justify-center p-3 md:p-4 rounded-2xl bg-white/60 dark:bg-gray-800/40 border border-[#e2edf2] dark:border-gray-700/50 backdrop-blur-md shadow-sm hover:-translate-y-1 hover:shadow-md transition-all">
               <Code className="text-[#15796b] dark:text-[#20A274] mb-2 w-6 h-6" />
-              <span className="font-[900] text-[18px] md:text-[20px] text-[#2A3B4C] dark:text-gray-100 leading-none">400+</span>
-              <span className="text-[11px] md:text-[12px] font-bold text-[#819ab7] dark:text-gray-400 mt-1 uppercase tracking-wider text-center">DSA Problems</span>
+              <span className="font-[900] text-[18px] md:text-[20px] text-[#2A3B4C] dark:text-gray-100 leading-none">10+</span>
+              <span className="text-[11px] md:text-[12px] font-bold text-[#819ab7] dark:text-gray-400 mt-1 uppercase tracking-wider text-center">Years Exp.</span>
             </div>
             <div className="flex flex-col items-center justify-center p-3 md:p-4 rounded-2xl bg-white/60 dark:bg-gray-800/40 border border-[#e2edf2] dark:border-gray-700/50 backdrop-blur-md shadow-sm hover:-translate-y-1 hover:shadow-md transition-all">
               <FileCode2 className="text-[#3197be] dark:text-[#4bb2df] mb-2 w-6 h-6" />
-              <span className="font-[900] text-[18px] md:text-[20px] text-[#2A3B4C] dark:text-gray-100 leading-none">MERN</span>
-              <span className="text-[11px] md:text-[12px] font-bold text-[#819ab7] dark:text-gray-400 mt-1 uppercase tracking-wider text-center">Developer</span>
+              <span className="font-[900] text-[18px] md:text-[20px] text-[#2A3B4C] dark:text-gray-100 leading-none">120K+</span>
+              <span className="text-[11px] md:text-[12px] font-bold text-[#819ab7] dark:text-gray-400 mt-1 uppercase tracking-wider text-center">Monthly Users</span>
             </div>
             <div className="flex flex-col items-center justify-center p-3 md:p-4 rounded-2xl bg-white/60 dark:bg-gray-800/40 border border-[#e2edf2] dark:border-gray-700/50 backdrop-blur-md shadow-sm hover:-translate-y-1 hover:shadow-md transition-all">
               <Briefcase className="text-[#20A274] dark:text-[#32c993] mb-2 w-6 h-6" />
@@ -126,8 +126,8 @@ const Hero = () => {
           {/* Socials */}
           <div className="mt-10 flex items-center justify-center md:justify-start gap-5">
             {[
-              { Icon: Linkedin, href: "https://linkedin.com/in/himanshu-shekhar-38342029a", bg: "bg-[#0077b5]" },
-              { Icon: Github, href: "https://github.com/himanshushekharon", bg: "bg-[#24292e]" }
+              { Icon: Linkedin, href: "https://www.linkedin.com/in/viktor-majewski", bg: "bg-[#0077b5]" },
+              { Icon: Github, href: "https://github.com/viktor-majewski", bg: "bg-[#24292e]" }
             ].map(({ Icon, href, bg }, i) => (
               <a
                 key={i}
