@@ -127,8 +127,8 @@ const Navbar = () => {
             </button>
 
             <a
-              href="https://drive.google.com/uc?export=download&id=1hpUWAvF57_7gyDJK1QCbc6JMXVYlHQZh"
-              download="GeneralCv12318302.pdf"
+              href="https://drive.google.com/uc?export=download&id=1wXohu_NCxbSESx5w-HW6zGvBXQty4aOx"
+              download="Resume.pdf"
               className="bg-gradient-to-r from-[#1C8F65] to-[#20A274] text-white px-5 py-2.5 rounded-xl hover:scale-105 transition-all duration-300 font-bold text-sm flex items-center gap-2 shadow-[0_0_20px_rgba(28,143,101,0.4)] border border-[#20A274]/50"
             >
               <Download size={16} strokeWidth={2.5} />
@@ -170,8 +170,8 @@ const Navbar = () => {
             </Link>
           ))}
           <a
-            href="https://drive.google.com/uc?export=download&id=1hpUWAvF57_7gyDJK1QCbc6JMXVYlHQZh"
-            download="GeneralCv12318302.pdf"
+            href="https://drive.google.com/uc?export=download&id=1wXohu_NCxbSESx5w-HW6zGvBXQty4aOx"
+            download="Resume.pdf"
             className="bg-gradient-to-r from-[#1C8F65] to-[#20A274] text-white px-5 py-3.5 rounded-xl w-full flex items-center justify-center gap-2 mt-4 font-bold text-sm shadow-[0_0_15px_rgba(28,143,101,0.3)]"
           >
             <Download size={18} strokeWidth={2.5} />
