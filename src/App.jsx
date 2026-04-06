@@ -15,7 +15,6 @@ import Footer from './components/Footer';
 import Loader from './components/Loader';
 import Particles from './components/Particles';
 import PageTransition from './components/PageTransition';
-import Chatbot from './components/Chatbot';
 
 function App() {
   const location = useLocation();
@@ -104,7 +103,6 @@ function App() {
           <Footer />
         </main>
       </div>
-      <Chatbot />
     </motion.div>
     </>
   );
