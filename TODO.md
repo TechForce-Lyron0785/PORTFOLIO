@@ -7,13 +7,13 @@
 ### 1. Information Gathered [✅ COMPLETE]
 
 - Unstaged changes: TODO.md, index.html, public/favicon.svg, src/components/Navbar.jsx
-- Core issue: Loader UX (plain 'H' → SVG logo), name standardization to 'Viktor Majewski'
+- Core issue: Loader UX (plain 'V' → SVG logo), name standardization to 'Viktor Majewski'
 - Related: Loader.jsx, Hero.jsx updates
 
 ### 2. Plan [✅ COMPLETE]
 
 - Commit type: `fix`
-- Message: `fix(loader): replace plain 'H' with branded SVG logo + standardize 'Viktor Majewski' naming`
+- Message: `fix(loader): replace plain 'V' with branded SVG logo + standardize 'Viktor Majewski' naming`
 
 ### 3. Dependent Files [✅ NONE]
 

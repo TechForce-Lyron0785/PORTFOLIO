@@ -64,7 +64,7 @@ const Loader = ({ finishLoading }) => {
               className="absolute inset-0 flex items-center justify-center pointer-events-none text-white font-[900] text-[2.2rem] select-none tracking-tighter"
               style={{ marginLeft: "-1px" }}
             >
-              H
+              V
             </span>
 
             {/* Animated Shine */}
