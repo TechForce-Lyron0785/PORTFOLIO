@@ -1,17 +1,25 @@
-import React from 'react';
-import { GraduationCap, Calendar, MapPin, Award, CheckCircle2, School } from 'lucide-react';
+import React from "react";
+import {
+  GraduationCap,
+  Calendar,
+  MapPin,
+  Award,
+  CheckCircle2,
+  School,
+} from "lucide-react";
 
 const Education = () => {
   const mainEducation = {
     degree: "Bachelor's Degree in Computer Science",
     institution: "Poznan University of Technology",
     duration: "2011 – 2015",
-    description: "Studied core computer science principles including algorithms, data structures, software engineering, databases, and distributed systems. Built a strong foundation that underpins a decade of professional full-stack development.",
+    description:
+      "Studied core computer science principles including algorithms, data structures, software engineering, databases, and distributed systems. Built a strong foundation that underpins a decade of professional full-stack development.",
     achievements: [
-      "Graduated with a CS degree",
+      "Active memeber of the university's programming club",
       "Focus on software engineering",
-      "Distributed systems coursework"
-    ]
+      "Distributed systems coursework",
+    ],
   };
 
   const schoolEducation = [
@@ -19,33 +27,37 @@ const Education = () => {
       level: "Senior Full Stack Developer",
       institution: "Transform Agency — Warsaw, Poland (Remote)",
       year: "2023–Now",
-      subjects: "React, Node.js, TypeScript, GraphQL, PostgreSQL, MongoDB, Docker, GitHub Actions",
-      icon: <School className="w-5 h-5" />
+      subjects:
+        "React, Node.js, TypeScript, GraphQL, PostgreSQL, MongoDB, Docker, GitHub Actions",
+      icon: <School className="w-5 h-5" />,
     },
     {
       level: "Full Stack Developer",
       institution: "Netguru — Poznan, Poland",
       year: "2019–2022",
-      subjects: "React, Node.js, TypeScript, Next.js, PostgreSQL, Docker, CI/CD",
-      icon: <School className="w-5 h-5" />
-    }
+      subjects:
+        "React, Node.js, TypeScript, Next.js, PostgreSQL, Docker, CI/CD",
+      icon: <School className="w-5 h-5" />,
+    },
   ];
 
   return (
     <section className="pt-32 pb-20 px-6 relative w-full min-h-screen flex flex-col items-center z-10">
-
       {/* Page Title Section */}
       <div className="text-center mb-16 relative w-full flex flex-col items-center">
         <h2 className="text-[44px] md:text-[54px] font-[900] text-[#2A3B4C] dark:text-gray-100 tracking-[-0.02em] leading-tight drop-shadow-sm">
-          Education & <span className="bg-gradient-to-r from-[#1C8F65] via-[#20A274] to-[#3197be] text-transparent bg-clip-text">Experience</span>
+          Education &{" "}
+          <span className="bg-gradient-to-r from-[#1C8F65] via-[#20A274] to-[#3197be] text-transparent bg-clip-text">
+            Experience
+          </span>
         </h2>
         <p className="mt-4 text-[#556987] dark:text-gray-300 text-[17px] font-[500] leading-[1.6] text-center max-w-[600px]">
-          My academic background and professional journey in software development
+          My academic background and professional journey in software
+          development
         </p>
       </div>
 
       <div className="max-w-[1000px] w-full flex flex-col gap-10">
-
         {/* Main Education Card */}
         <div className="bg-white/70 dark:bg-[#0a111a]/80 backdrop-blur-xl rounded-[28px] p-8 md:p-10 border-[1.5px] border-white/50 dark:border-white/5 shadow-2xl dark:shadow-[0_0_40px_rgba(32,162,116,0.05)] group hover:border-[#20A274]/40 transition-all duration-500 relative overflow-hidden">
           <div className="absolute top-0 right-0 w-48 h-48 bg-gradient-to-bl from-[#20A274]/10 to-transparent rounded-bl-full opacity-50 group-hover:scale-110 transition-transform duration-700"></div>
@@ -79,8 +91,14 @@ const Education = () => {
             </h4>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {mainEducation.achievements.map((ach, i) => (
-                <div key={i} className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-white/50 dark:bg-gray-900/40 border border-[#e2edf2] dark:border-gray-700/30 text-[#556987] dark:text-gray-300 text-[14px] font-[700] hover:shadow-md hover:-translate-y-1 transition-all duration-300">
-                  <CheckCircle2 size={18} className="text-[#20A274] flex-shrink-0" />
+                <div
+                  key={i}
+                  className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-white/50 dark:bg-gray-900/40 border border-[#e2edf2] dark:border-gray-700/30 text-[#556987] dark:text-gray-300 text-[14px] font-[700] hover:shadow-md hover:-translate-y-1 transition-all duration-300"
+                >
+                  <CheckCircle2
+                    size={18}
+                    className="text-[#20A274] flex-shrink-0"
+                  />
                   {ach}
                 </div>
               ))}
@@ -91,7 +109,10 @@ const Education = () => {
         {/* Additional Education (Smaller Cards) */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
           {schoolEducation.map((edu, index) => (
-            <div key={index} className="bg-white/70 dark:bg-[#0a111a]/80 backdrop-blur-xl rounded-[24px] p-7 border-[1.5px] border-white/50 dark:border-white/5 shadow-md hover:shadow-xl dark:hover:shadow-[0_0_30px_rgba(32,162,116,0.1)] group hover:border-[#20A274]/30 transition-all duration-300 flex flex-col justify-between">
+            <div
+              key={index}
+              className="bg-white/70 dark:bg-[#0a111a]/80 backdrop-blur-xl rounded-[24px] p-7 border-[1.5px] border-white/50 dark:border-white/5 shadow-md hover:shadow-xl dark:hover:shadow-[0_0_30px_rgba(32,162,116,0.1)] group hover:border-[#20A274]/30 transition-all duration-300 flex flex-col justify-between"
+            >
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-[#f2f9f9] dark:bg-gray-800/60 flex items-center justify-center text-[#15796b] dark:text-[#20A274] border border-[#d6ebe9] dark:border-[#20A274]/20 group-hover:scale-110 transition-transform">
@@ -110,14 +131,15 @@ const Education = () => {
               </p>
               {edu.subjects && (
                 <p className="text-[#819ab7] dark:text-gray-500 text-[13px] mt-4 font-medium italic border-t border-gray-100 dark:border-gray-800/60 pt-3">
-                  <span className="font-bold uppercase text-[11px] tracking-wider text-[#15796b] dark:text-[#20A274] not-italic block mb-1">Key Stack:</span>
+                  <span className="font-bold uppercase text-[11px] tracking-wider text-[#15796b] dark:text-[#20A274] not-italic block mb-1">
+                    Key Stack:
+                  </span>
                   {edu.subjects}
                 </p>
               )}
             </div>
           ))}
         </div>
-
       </div>
 
       {/* Decorative background dots */}
