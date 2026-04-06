@@ -10,7 +10,7 @@ const Loader = ({ finishLoading }) => {
     const timer = setTimeout(() => {
       document.body.style.overflow = 'auto';
       finishLoading();
-    }, 4800); // Increased duration to ~4.8s for a slower, more premium feel
+    }, 3500); // Premium loader duration optimized to 3.5s
 
     return () => {
       document.body.style.overflow = 'auto';
@@ -50,7 +50,11 @@ const Loader = ({ finishLoading }) => {
 
           {/* Hexagon/Rounded-xl Branding Box (Matches Navbar) */}
           <div className="relative z-20 w-32 h-32 bg-gradient-to-br from-[#0a151f] to-[#070e17] rounded-[40px] flex items-center justify-center border border-white/10 shadow-[0_20px_50px_rgba(32,162,116,0.4)] overflow-hidden">
-            <span className="text-white text-6xl font-[900] select-none tracking-tighter">H</span>
+            <svg viewBox="0 0 100 100" className="w-20 h-20 mx-auto drop-shadow-[0_0_10px_rgba(32,162,116,0.3)]">
+              <path d="M50 0 L93.3 25 L93.3 75 L50 100 L6.7 75 L6.7 25 Z" fill="#20A274" />
+              <path d="M50 0 L50 100 L6.7 75 L6.7 25 Z" fill="#1C8F65" />
+            </svg>
+            <span className="absolute inset-0 flex items-center justify-center pointer-events-none text-white font-[900] text-[2.2rem] select-none tracking-tighter" style={{marginLeft: '-1px'}}>H</span>
             
             {/* Animated Shine */}
             <motion.div
@@ -85,7 +89,7 @@ const Loader = ({ finishLoading }) => {
             className="flex items-center gap-3"
           >
             <h2 className="text-[26px] md:text-[32px] font-[900] text-white tracking-[0.3em] uppercase">
-              HIMANSHU <span className="text-[#20A274]">SHEKHAR</span>
+Himanshu <span className="text-[#20A274]">Shekhar</span>
             </h2>
           </motion.div>
           

@@ -52,7 +52,7 @@ const Hero = () => {
             <div className="w-full h-full rounded-full border-[10px] border-[#F2F9F9] dark:border-[#0e1526] overflow-hidden bg-white dark:bg-[#0f172a] shadow-inner flex items-center justify-center relative">
               <img
                 src={profileImg}
-                alt="Viktor Majewski"
+alt="Himanshu Shekhar"
                 className="w-full h-full object-cover object-center scale-[1.03] transition-transform duration-700 hover:scale-[1.08]"
               />
             </div>
@@ -80,7 +80,7 @@ const Hero = () => {
 
           <h1 className="text-[42px] md:text-[54px] lg:text-[60px] font-[900] text-[#2A3B4C] dark:text-gray-100 leading-[1.15] mb-4 tracking-[-0.02em]">
             Hi, I'm <br className="hidden lg:block" />
-            <span className="bg-gradient-to-r from-[#1C8F65] via-[#20A274] to-[#3197be] dark:from-[#20A274] dark:to-[#4bb2df] text-transparent bg-clip-text drop-shadow-sm">Viktor Majewski</span>
+<span className="bg-gradient-to-r from-[#1C8F65] via-[#20A274] to-[#3197be] dark:from-[#20A274] dark:to-[#4bb2df] text-transparent bg-clip-text drop-shadow-sm">Himanshu Shekhar</span>
           </h1>
 
           {/* Subheading with Typing Animation */}

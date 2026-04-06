@@ -53,11 +53,11 @@ const Navbar = () => {
             <svg viewBox="0 0 100 100" className="w-full h-full drop-shadow-[0_0_10px_rgba(32,162,116,0.3)]">
               <path d="M50 0 L93.3 25 L93.3 75 L50 100 L6.7 75 L6.7 25 Z" fill="#20A274" />
               <path d="M50 0 L50 100 L6.7 75 L6.7 25 Z" fill="#1C8F65" />
-            </svg>
-            <span className="absolute text-white font-bold text-2xl font-sans" style={{ marginLeft: '-1px' }}>V</span>
+</svg>
+            <span className="absolute text-white font-bold text-2xl font-sans" style={{ marginLeft: '-1px' }}>H</span>
           </div>
           <div className="flex flex-col -ml-1 mt-0.5">
-            <span className="text-[26px] font-bold text-[#15796b] dark:text-[#20A274] leading-[1.1] tracking-wide drop-shadow-[0_0_8px_rgba(32,162,116,0.2)]">Viktor</span>
+            <span className="text-[26px] font-bold text-[#15796b] dark:text-[#20A274] leading-[1.1] tracking-wide drop-shadow-[0_0_8px_rgba(32,162,116,0.2)]">Himanshu</span>
             <span className="text-[14px] font-[700] text-gray-500 tracking-[0.22em] leading-[1.1] ml-[2px] dark:text-gray-400">PORTFOLIO</span>
           </div>
         </Link>
