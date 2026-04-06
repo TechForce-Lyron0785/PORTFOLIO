@@ -67,7 +67,7 @@ const Hero = () => {
               <img
                 src={profileImg}
                 alt="Viktor Majewski"
-                className="w-full h-full object-cover object-center scale-[1.03] transition-transform duration-700 hover:scale-[1.08]"
+                className="w-full h-full object-cover object-center scale-[1] transition-transform duration-700 hover:scale-[1.08]"
               />
             </div>
           </div>
