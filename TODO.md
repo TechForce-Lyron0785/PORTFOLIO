@@ -1,29 +1,25 @@
-# Portfolio Loader & Branding Standardization
+# Portfolio UI Updates - Conventional Commit Message Task
 
-## Approved Plan Steps
+## Steps (2/4 Completed - Commit Message Generated)
 
-**Status**: Approved by user.
+### ✅ 1. Analyze changes
 
-### 1. Information Gathered [✅ COMPLETE]
+- [x] Run `git status` and `git diff --stat`
+- [x] Read modified files: Contact.jsx, Footer.jsx, Hero.jsx
+- [x] Create detailed edit plan
+- [x] Get user approval
 
-- Unstaged changes: TODO.md, index.html, public/favicon.svg, src/components/Navbar.jsx
-- Core issue: Loader UX (plain 'V' → SVG logo), name standardization to 'Viktor Majewski'
-- Related: Loader.jsx, Hero.jsx updates
+### ✅ 2. Generate conventional commit message
 
-### 2. Plan [✅ COMPLETE]
+- [x] **Message:** `feat(components): redesign contact form and footer with glassmorphism UI, EmailJS integration, and enhanced responsiveness`
 
-- Commit type: `fix`
-- Message: `fix(loader): replace plain 'V' with branded SVG logo + standardize 'Viktor Majewski' naming`
+### ⬜ 3. Stage changes
 
-### 3. Dependent Files [✅ NONE]
+- [ ] `git add src/components/Contact.jsx src/components/Footer.jsx src/components/Hero.jsx`
 
-### 4. Followup Steps
+### ⬜ 4. Provide commit command & demo
 
-- [✅] Stage changes
-- [ ] Commit with message
-- [ ] Test loader: `sessionStorage.removeItem('hasSeenLoader'); location.reload();`
-- [ ] `git push`
-- [ ] Final TODO update
-- [ ] attempt_completion
+- [ ] Suggest `git commit -m "feat(components): redesign contact form and footer with glassmorphism UI, EmailJS integration, and enhanced responsiveness"`
+- [ ] Use `attempt_completion` with result
 
-**Progress**: TODO.md updated. Ready for staging & commit.
+**Status:** Ready to stage and commit.

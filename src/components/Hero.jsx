@@ -136,7 +136,7 @@ const Hero = () => {
             <div className="flex flex-col items-center justify-center p-3 md:p-4 rounded-2xl bg-white/60 dark:bg-gray-800/40 border border-[#e2edf2] dark:border-gray-700/50 backdrop-blur-md shadow-sm hover:-translate-y-1 hover:shadow-md transition-all">
               <FileCode2 className="text-[#3197be] dark:text-[#4bb2df] mb-2 w-6 h-6" />
               <span className="font-[900] text-[18px] md:text-[20px] text-[#2A3B4C] dark:text-gray-100 leading-none">
-                120K+
+                100K+
               </span>
               <span className="text-[11px] md:text-[12px] font-bold text-[#819ab7] dark:text-gray-400 mt-1 uppercase tracking-wider text-center">
                 Monthly Users
@@ -185,7 +185,7 @@ const Hero = () => {
               },
               {
                 Icon: Github,
-                href: "https://github.com/viktor-majewski",
+                href: "https://github.com/TechForce-Lyron0785",
                 bg: "bg-[#24292e]",
               },
             ].map(({ Icon, href, bg }, i) => (

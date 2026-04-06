@@ -1,7 +1,18 @@
-import React, { useState, useRef } from 'react';
-import { Mail, Github, Linkedin, MapPin, Send, User, MessageCircle, AlertCircle, CheckCircle2, Target } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
-import emailjs from '@emailjs/browser';
+import React, { useState, useRef } from "react";
+import {
+  Mail,
+  Github,
+  Linkedin,
+  MapPin,
+  Send,
+  User,
+  MessageCircle,
+  AlertCircle,
+  CheckCircle2,
+  Target,
+} from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import emailjs from "@emailjs/browser";
 
 const WhatsAppIcon = ({ size = 24, className = "" }) => (
   <svg
@@ -18,16 +29,16 @@ const WhatsAppIcon = ({ size = 24, className = "" }) => (
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
   });
 
   const [status, setStatus] = useState({
     submitted: false,
     success: false,
-    message: ''
+    message: "",
   });
   const [errors, setErrors] = useState({});
   const form = useRef();
@@ -52,7 +63,7 @@ const Contact = () => {
     setFormData({ ...formData, [name]: value });
     // Clear error when typing
     if (errors[name]) {
-      setErrors({ ...errors, [name]: '' });
+      setErrors({ ...errors, [name]: "" });
     }
   };
 
@@ -61,32 +72,37 @@ const Contact = () => {
     if (validate()) {
       setStatus({ ...status, submitted: true });
 
-      emailjs.sendForm(
-        'service_hima3466',
-        'template_0vln7dx',
-        form.current,
-        'NuPJvW_NB7TSma7iQ'
-      ).then((result) => {
-        setStatus({
-          submitted: false,
-          success: true,
-          message: 'Message sent successfully 🚀'
-        });
-        setFormData({ name: '', email: '', subject: '', message: '' });
+      emailjs
+        .sendForm(
+          "service_hima3466",
+          "template_0vln7dx",
+          form.current,
+          "NuPJvW_NB7TSma7iQ",
+        )
+        .then(
+          (result) => {
+            setStatus({
+              submitted: false,
+              success: true,
+              message: "Message sent successfully 🚀",
+            });
+            setFormData({ name: "", email: "", subject: "", message: "" });
 
-        setTimeout(() => {
-          setStatus(prev => ({ ...prev, success: false }));
-        }, 5000);
-      }, (error) => {
-        setStatus({
-          submitted: false,
-          success: true,
-          message: 'Failed to send message ❌'
-        });
-        setTimeout(() => {
-          setStatus(prev => ({ ...prev, success: false }));
-        }, 5000);
-      });
+            setTimeout(() => {
+              setStatus((prev) => ({ ...prev, success: false }));
+            }, 5000);
+          },
+          (error) => {
+            setStatus({
+              submitted: false,
+              success: true,
+              message: "Failed to send message ❌",
+            });
+            setTimeout(() => {
+              setStatus((prev) => ({ ...prev, success: false }));
+            }, 5000);
+          },
+        );
     }
   };
 
@@ -96,38 +112,49 @@ const Contact = () => {
       label: "Email",
       value: "viktor19980785@gmail.com",
       link: "mailto:viktor19980785@gmail.com",
-      color: "text-[#20A274]"
+      color: "text-[#20A274]",
     },
     {
       icon: <Github size={24} />,
       label: "GitHub",
       value: "viktor-majewski",
-      link: "https://github.com/viktor-majewski",
-      color: "text-[#24292e] dark:text-gray-100"
+      link: "https://github.com/TechForce-Lyron0785",
+      color: "text-[#24292e] dark:text-gray-100",
     },
     {
       icon: <Linkedin size={24} />,
       label: "LinkedIn",
       value: "viktor-majewski",
       link: "https://www.linkedin.com/in/viktor-majewski",
-      color: "text-[#0077b5]"
+      color: "text-[#0077b5]",
     },
     {
       icon: <MapPin size={24} />,
       label: "Location",
       value: "Warsaw, Poland",
       link: "#",
-      color: "text-[#3197be]"
-    }
+      color: "text-[#3197be]",
+    },
   ];
 
   const socialLinks = [
-    { icon: <Github size={20} />, link: "https://github.com/viktor-majewski", color: "hover:bg-[#24292e] hover:text-white" },
-    { icon: <Linkedin size={20} />, link: "https://www.linkedin.com/in/viktor-majewski", color: "hover:bg-[#0077b5] hover:text-white" }
+    {
+      icon: <Github size={20} />,
+      link: "https://github.com/TechForce-Lyron0785",
+      color: "hover:bg-[#24292e] hover:text-white",
+    },
+    {
+      icon: <Linkedin size={20} />,
+      link: "https://www.linkedin.com/in/viktor-majewski",
+      color: "hover:bg-[#0077b5] hover:text-white",
+    },
   ];
 
   return (
-    <section id="contact" className="pt-32 pb-24 px-6 relative w-full flex flex-col items-center overflow-hidden z-10">
+    <section
+      id="contact"
+      className="pt-32 pb-24 px-6 relative w-full flex flex-col items-center overflow-hidden z-10"
+    >
       {/* Structural glass background */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-[1400px] h-[80%] bg-[#20A274]/5 dark:bg-[#20A274]/2 rounded-[60px] blur-[120px] -z-10"></div>
 
@@ -139,10 +166,14 @@ const Contact = () => {
         className="text-center mb-20 relative w-full flex flex-col items-center"
       >
         <h2 className="text-[44px] md:text-[54px] font-[900] text-[#2A3B4C] dark:text-gray-100 tracking-[-0.02em] leading-tight">
-          Get In <span className="bg-gradient-to-r from-[#20A274] via-[#1C8F65] to-[#3197be] text-transparent bg-clip-text">Touch</span>
+          Get In{" "}
+          <span className="bg-gradient-to-r from-[#20A274] via-[#1C8F65] to-[#3197be] text-transparent bg-clip-text">
+            Touch
+          </span>
         </h2>
         <p className="mt-4 text-[#556987] dark:text-gray-300 text-[18px] font-medium max-w-[600px]">
-          Have a project or opportunity? Let's connect and build something amazing together!
+          Have a project or opportunity? Let's connect and build something
+          amazing together!
         </p>
       </motion.div>
 
@@ -166,15 +197,23 @@ const Contact = () => {
                 <a
                   key={i}
                   href={info.link}
-                  target={info.link.startsWith('http') ? '_blank' : undefined}
-                  rel={info.link.startsWith('http') ? 'noopener noreferrer' : undefined}
+                  target={info.link.startsWith("http") ? "_blank" : undefined}
+                  rel={
+                    info.link.startsWith("http")
+                      ? "noopener noreferrer"
+                      : undefined
+                  }
                   className="group flex items-center gap-5 transition-all duration-300"
                 >
-                  <div className={`w-14 h-14 rounded-2xl bg-gray-50 dark:bg-gray-800/40 border border-gray-100 dark:border-gray-700/50 flex items-center justify-center ${info.color} shadow-sm group-hover:scale-110 group-hover:shadow-[0_8px_20px_rgba(0,0,0,0.05)] dark:group-hover:shadow-[0_8px_20px_rgba(32,162,116,0.1)] transition-all duration-300`}>
+                  <div
+                    className={`w-14 h-14 rounded-2xl bg-gray-50 dark:bg-gray-800/40 border border-gray-100 dark:border-gray-700/50 flex items-center justify-center ${info.color} shadow-sm group-hover:scale-110 group-hover:shadow-[0_8px_20px_rgba(0,0,0,0.05)] dark:group-hover:shadow-[0_8px_20px_rgba(32,162,116,0.1)] transition-all duration-300`}
+                  >
                     {info.icon}
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-[12px] font-black text-[#819ab7] dark:text-gray-500 uppercase tracking-widest">{info.label}</span>
+                    <span className="text-[12px] font-black text-[#819ab7] dark:text-gray-500 uppercase tracking-widest">
+                      {info.label}
+                    </span>
                     <span className="text-[15px] font-bold text-[#2A3B4C] dark:text-gray-200 group-hover:text-[#20A274] transition-colors break-all">
                       {info.value}
                     </span>
@@ -184,7 +223,9 @@ const Contact = () => {
             </div>
 
             <div className="mt-12 pt-10 border-t border-gray-100 dark:border-gray-800/50">
-              <p className="text-[13px] font-black text-[#819ab7] dark:text-gray-500 uppercase tracking-[0.2em] mb-6 text-center lg:text-left">Follow Me</p>
+              <p className="text-[13px] font-black text-[#819ab7] dark:text-gray-500 uppercase tracking-[0.2em] mb-6 text-center lg:text-left">
+                Follow Me
+              </p>
               <div className="flex items-center justify-center lg:justify-start gap-4">
                 {socialLinks.map((social, i) => (
                   <a
@@ -211,11 +252,18 @@ const Contact = () => {
           className="w-full lg:w-[62%]"
         >
           <div className="bg-white/70 dark:bg-[#0a111a]/80 backdrop-blur-2xl rounded-[32px] p-8 md:p-10 border border-white/50 dark:border-white/5 shadow-2xl dark:shadow-[0_20px_50px_rgba(0,0,0,0.2)]">
-            <form ref={form} onSubmit={handleSubmit} className="flex flex-col gap-6">
+            <form
+              ref={form}
+              onSubmit={handleSubmit}
+              className="flex flex-col gap-6"
+            >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Name Field */}
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="name" className="text-[13px] font-black text-[#2A3B4C] dark:text-gray-300 uppercase tracking-widest px-1 flex items-center gap-2">
+                  <label
+                    htmlFor="name"
+                    className="text-[13px] font-black text-[#2A3B4C] dark:text-gray-300 uppercase tracking-widest px-1 flex items-center gap-2"
+                  >
                     <User size={14} className="text-[#20A274]" /> Name
                   </label>
                   <div className="relative">
@@ -226,18 +274,27 @@ const Contact = () => {
                       value={formData.name}
                       onChange={handleChange}
                       placeholder="Your Full Name"
-                      className={`w-full bg-gray-50/50 dark:bg-gray-900/50 border ${errors.name ? 'border-red-400' : 'border-gray-200 dark:border-gray-800'} rounded-2xl px-6 py-4 text-[15px] font-medium text-[#2A3B4C] dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-600 focus:outline-none focus:ring-4 focus:ring-[#20A274]/10 focus:border-[#20A274] transition-all duration-300`}
+                      className={`w-full bg-gray-50/50 dark:bg-gray-900/50 border ${errors.name ? "border-red-400" : "border-gray-200 dark:border-gray-800"} rounded-2xl px-6 py-4 text-[15px] font-medium text-[#2A3B4C] dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-600 focus:outline-none focus:ring-4 focus:ring-[#20A274]/10 focus:border-[#20A274] transition-all duration-300`}
                     />
                     {errors.name && (
-                      <span className="absolute right-4 top-1/2 -translate-y-1/2 text-red-500"><AlertCircle size={18} /></span>
+                      <span className="absolute right-4 top-1/2 -translate-y-1/2 text-red-500">
+                        <AlertCircle size={18} />
+                      </span>
                     )}
                   </div>
-                  {errors.name && <p className="text-red-500 text-[11px] font-bold mt-1 px-1">{errors.name}</p>}
+                  {errors.name && (
+                    <p className="text-red-500 text-[11px] font-bold mt-1 px-1">
+                      {errors.name}
+                    </p>
+                  )}
                 </div>
 
                 {/* Email Field */}
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="email" className="text-[13px] font-black text-[#2A3B4C] dark:text-gray-300 uppercase tracking-widest px-1 flex items-center gap-2">
+                  <label
+                    htmlFor="email"
+                    className="text-[13px] font-black text-[#2A3B4C] dark:text-gray-300 uppercase tracking-widest px-1 flex items-center gap-2"
+                  >
                     <Mail size={14} className="text-[#20A274]" /> Email Address
                   </label>
                   <div className="relative">
@@ -248,19 +305,28 @@ const Contact = () => {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="email@example.com"
-                      className={`w-full bg-gray-50/50 dark:bg-gray-900/50 border ${errors.email ? 'border-red-400' : 'border-gray-200 dark:border-gray-800'} rounded-2xl px-6 py-4 text-[15px] font-medium text-[#2A3B4C] dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-600 focus:outline-none focus:ring-4 focus:ring-[#20A274]/10 focus:border-[#20A274] transition-all duration-300`}
+                      className={`w-full bg-gray-50/50 dark:bg-gray-900/50 border ${errors.email ? "border-red-400" : "border-gray-200 dark:border-gray-800"} rounded-2xl px-6 py-4 text-[15px] font-medium text-[#2A3B4C] dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-600 focus:outline-none focus:ring-4 focus:ring-[#20A274]/10 focus:border-[#20A274] transition-all duration-300`}
                     />
                     {errors.email && (
-                      <span className="absolute right-4 top-1/2 -translate-y-1/2 text-red-500"><AlertCircle size={18} /></span>
+                      <span className="absolute right-4 top-1/2 -translate-y-1/2 text-red-500">
+                        <AlertCircle size={18} />
+                      </span>
                     )}
                   </div>
-                  {errors.email && <p className="text-red-500 text-[11px] font-bold mt-1 px-1">{errors.email}</p>}
+                  {errors.email && (
+                    <p className="text-red-500 text-[11px] font-bold mt-1 px-1">
+                      {errors.email}
+                    </p>
+                  )}
                 </div>
               </div>
 
               {/* Subject Field */}
               <div className="flex flex-col gap-2">
-                <label htmlFor="subject" className="text-[13px] font-black text-[#2A3B4C] dark:text-gray-300 uppercase tracking-widest px-1 flex items-center gap-2">
+                <label
+                  htmlFor="subject"
+                  className="text-[13px] font-black text-[#2A3B4C] dark:text-gray-300 uppercase tracking-widest px-1 flex items-center gap-2"
+                >
                   <Target size={14} className="text-[#20A274]" /> Subject
                 </label>
                 <div className="relative">
@@ -271,18 +337,27 @@ const Contact = () => {
                     value={formData.subject}
                     onChange={handleChange}
                     placeholder="What project do you have in mind?"
-                    className={`w-full bg-gray-50/50 dark:bg-gray-900/50 border ${errors.subject ? 'border-red-400' : 'border-gray-200 dark:border-gray-800'} rounded-2xl px-6 py-4 text-[15px] font-medium text-[#2A3B4C] dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-600 focus:outline-none focus:ring-4 focus:ring-[#20A274]/10 focus:border-[#20A274] transition-all duration-300`}
+                    className={`w-full bg-gray-50/50 dark:bg-gray-900/50 border ${errors.subject ? "border-red-400" : "border-gray-200 dark:border-gray-800"} rounded-2xl px-6 py-4 text-[15px] font-medium text-[#2A3B4C] dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-600 focus:outline-none focus:ring-4 focus:ring-[#20A274]/10 focus:border-[#20A274] transition-all duration-300`}
                   />
                   {errors.subject && (
-                    <span className="absolute right-4 top-1/2 -translate-y-1/2 text-red-500"><AlertCircle size={18} /></span>
+                    <span className="absolute right-4 top-1/2 -translate-y-1/2 text-red-500">
+                      <AlertCircle size={18} />
+                    </span>
                   )}
                 </div>
-                {errors.subject && <p className="text-red-500 text-[11px] font-bold mt-1 px-1">{errors.subject}</p>}
+                {errors.subject && (
+                  <p className="text-red-500 text-[11px] font-bold mt-1 px-1">
+                    {errors.subject}
+                  </p>
+                )}
               </div>
 
               {/* Message Field */}
               <div className="flex flex-col gap-2">
-                <label htmlFor="message" className="text-[13px] font-black text-[#2A3B4C] dark:text-gray-300 uppercase tracking-widest px-1 flex items-center gap-2">
+                <label
+                  htmlFor="message"
+                  className="text-[13px] font-black text-[#2A3B4C] dark:text-gray-300 uppercase tracking-widest px-1 flex items-center gap-2"
+                >
                   <MessageCircle size={14} className="text-[#20A274]" /> Message
                 </label>
                 <div className="relative">
@@ -293,13 +368,19 @@ const Contact = () => {
                     onChange={handleChange}
                     rows="5"
                     placeholder="Tell me more about your requirements..."
-                    className={`w-full bg-gray-50/50 dark:bg-gray-900/50 border ${errors.message ? 'border-red-400' : 'border-gray-200 dark:border-gray-800'} rounded-2xl px-6 py-4 text-[15px] font-medium text-[#2A3B4C] dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-600 focus:outline-none focus:ring-4 focus:ring-[#20A274]/10 focus:border-[#20A274] transition-all duration-300 resize-none`}
+                    className={`w-full bg-gray-50/50 dark:bg-gray-900/50 border ${errors.message ? "border-red-400" : "border-gray-200 dark:border-gray-800"} rounded-2xl px-6 py-4 text-[15px] font-medium text-[#2A3B4C] dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-600 focus:outline-none focus:ring-4 focus:ring-[#20A274]/10 focus:border-[#20A274] transition-all duration-300 resize-none`}
                   ></textarea>
                   {errors.message && (
-                    <span className="absolute right-4 top-6 text-red-500"><AlertCircle size={18} /></span>
+                    <span className="absolute right-4 top-6 text-red-500">
+                      <AlertCircle size={18} />
+                    </span>
                   )}
                 </div>
-                {errors.message && <p className="text-red-500 text-[11px] font-bold mt-1 px-1">{errors.message}</p>}
+                {errors.message && (
+                  <p className="text-red-500 text-[11px] font-bold mt-1 px-1">
+                    {errors.message}
+                  </p>
+                )}
               </div>
 
               {/* Submit Button */}
@@ -309,7 +390,7 @@ const Contact = () => {
                 className="mt-2 bg-gradient-to-r from-[#1C8F65] via-[#20A274] to-[#3197be] text-white px-8 py-5 rounded-2xl font-black text-[16px] tracking-wider flex items-center justify-center gap-3 hover:scale-[1.02] active:scale-[0.98] transition-all duration-500 shadow-[0_15px_30px_-10px_rgba(32,162,116,0.5)] dark:shadow-[0_10px_40px_rgba(32,162,116,0.3)] disabled:opacity-70 group relative overflow-hidden"
               >
                 <span className="relative z-10 flex items-center gap-2">
-                  {status.submitted ? 'Sending...' : 'Send Message'} 🚀
+                  {status.submitted ? "Sending..." : "Send Message"} 🚀
                 </span>
                 <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
               </button>
@@ -319,12 +400,14 @@ const Contact = () => {
                 {status.success && (
                   <motion.div
                     initial={{ opacity: 0, height: 0, y: 10 }}
-                    animate={{ opacity: 1, height: 'auto', y: 0 }}
+                    animate={{ opacity: 1, height: "auto", y: 0 }}
                     exit={{ opacity: 0, height: 0, y: 10 }}
                     className="bg-[#20A274]/10 border border-[#20A274]/20 rounded-2xl p-4 flex items-center gap-3 text-[#15796b] dark:text-[#20A274]"
                   >
                     <CheckCircle2 size={24} />
-                    <span className="text-[14px] font-bold">{status.message}</span>
+                    <span className="text-[14px] font-bold">
+                      {status.message}
+                    </span>
                   </motion.div>
                 )}
               </AnimatePresence>

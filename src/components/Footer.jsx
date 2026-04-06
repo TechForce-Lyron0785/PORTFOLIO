@@ -1,29 +1,50 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Mail, Github, Linkedin, ExternalLink, Heart, ArrowUpRight } from 'lucide-react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { Link } from "react-router-dom";
+import {
+  Mail,
+  Github,
+  Linkedin,
+  ExternalLink,
+  Heart,
+  ArrowUpRight,
+} from "lucide-react";
+import { motion } from "framer-motion";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const quickLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'Skills', path: '/skills' },
-    { name: 'Projects', path: '/projects' },
-    { name: 'Contact', path: '/contact' },
+    { name: "Home", path: "/" },
+    { name: "Skills", path: "/skills" },
+    { name: "Projects", path: "/projects" },
+    { name: "Contact", path: "/contact" },
   ];
 
   const socialLinks = [
-    { icon: <Mail size={20} />, label: "Email", href: "mailto:viktor19980785@gmail.com", color: "hover:text-[#20A274]" },
-    { icon: <Github size={20} />, label: "GitHub", href: "https://github.com/viktor-majewski", color: "hover:text-white" },
-    { icon: <Linkedin size={20} />, label: "LinkedIn", href: "https://www.linkedin.com/in/viktor-majewski", color: "hover:text-[#0077b5]" },
+    {
+      icon: <Mail size={20} />,
+      label: "Email",
+      href: "mailto:viktor19980785@gmail.com",
+      color: "hover:text-[#20A274]",
+    },
+    {
+      icon: <Github size={20} />,
+      label: "GitHub",
+      href: "https://github.com/TechForce-Lyron0785",
+      color: "hover:text-white",
+    },
+    {
+      icon: <Linkedin size={20} />,
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/in/viktor-majewski",
+      color: "hover:text-[#0077b5]",
+    },
   ];
 
   return (
     <footer className="w-full bg-white/40 dark:bg-[#070e17]/80 backdrop-blur-xl border-t border-gray-100 dark:border-gray-800/60 relative z-20 pt-16 pb-10">
       <div className="max-w-[1400px] mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
-
           {/* LEFT: Branding */}
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-3 group">
@@ -31,13 +52,17 @@ const Footer = () => {
                 V
               </div>
               <span className="text-2xl font-black text-[#2A3B4C] dark:text-white tracking-tight">
-                Viktor <span className="bg-gradient-to-r from-[#20A274] to-[#1C8F65] text-transparent bg-clip-text">Majewski</span>
+                Viktor{" "}
+                <span className="bg-gradient-to-r from-[#20A274] to-[#1C8F65] text-transparent bg-clip-text">
+                  Majewski
+                </span>
               </span>
             </div>
             <p className="text-[#556987] dark:text-gray-400 font-bold text-[15px] leading-relaxed max-w-[280px]">
               Senior Full-Stack Developer | Warsaw, Poland
               <br />
-              Building scalable, high-performance web applications with 10+ years of experience.
+              Building scalable, high-performance web applications with 10+
+              years of experience.
             </p>
           </div>
 
@@ -67,8 +92,18 @@ const Footer = () => {
               <span className="w-4 h-[2px] bg-[#3197be]"></span> Tech Stack
             </h4>
             <div className="flex flex-wrap gap-2">
-              {['React', 'Next.js', 'Node.js', 'TypeScript', 'PostgreSQL', 'Docker'].map((tech, i) => (
-                <span key={i} className="px-3 py-1.5 rounded-lg bg-gray-50/50 dark:bg-gray-800/40 border border-gray-100 dark:border-gray-700/50 text-[12px] font-black text-[#556987] dark:text-gray-400">
+              {[
+                "React",
+                "Next.js",
+                "Node.js",
+                "TypeScript",
+                "PostgreSQL",
+                "Docker",
+              ].map((tech, i) => (
+                <span
+                  key={i}
+                  className="px-3 py-1.5 rounded-lg bg-gray-50/50 dark:bg-gray-800/40 border border-gray-100 dark:border-gray-700/50 text-[12px] font-black text-[#556987] dark:text-gray-400"
+                >
                   {tech}
                 </span>
               ))}
@@ -93,7 +128,10 @@ const Footer = () => {
                     {social.icon}
                   </div>
                   <span>{social.label}</span>
-                  <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 -translate-y-1 group-hover:translate-x-1 transition-all duration-300" />
+                  <ArrowUpRight
+                    size={14}
+                    className="opacity-0 group-hover:opacity-100 -translate-y-1 group-hover:translate-x-1 transition-all duration-300"
+                  />
                 </a>
               ))}
             </div>
@@ -107,7 +145,9 @@ const Footer = () => {
           </p>
           <div className="flex items-center gap-2 text-[13px] font-[800] text-[#556987] dark:text-gray-400">
             <span>Built with</span>
-            <span className="text-[#20A274] animate-pulse"><Heart size={16} fill="currentColor" /></span>
+            <span className="text-[#20A274] animate-pulse">
+              <Heart size={16} fill="currentColor" />
+            </span>
             <span>using React & Tailwind CSS</span>
           </div>
         </div>
