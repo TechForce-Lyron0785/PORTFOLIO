@@ -117,7 +117,7 @@ const Contact = () => {
     {
       icon: <Github size={24} />,
       label: "GitHub",
-      value: "viktor-majewski",
+      value: "TechForce-Lyron0785",
       link: "https://github.com/TechForce-Lyron0785",
       color: "text-[#24292e] dark:text-gray-100",
     },
