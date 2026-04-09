@@ -1,5 +1,5 @@
 import React from 'react';
-import { Settings, MonitorPlay, GraduationCap, FolderGit2, Award, Trophy, ChevronRight } from 'lucide-react';
+import { Settings, MonitorPlay, GraduationCap, FolderGit2, Trophy, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const cards = [
@@ -26,12 +26,6 @@ const cards = [
     path: '/projects',
     icon: <FolderGit2 className="text-[#15796b]" size={36} />,
     items: ['Live Projects', 'Case Studies', 'Source Code'],
-  },
-  {
-    title: 'CERTIFICATES',
-    path: '/certificates',
-    icon: <Award className="text-[#e28b48]" size={36} />,
-    items: ['Professional Certifications', 'Courses & Exams', 'Achievements'],
   },
   {
     title: 'ACHIEVEMENTS',

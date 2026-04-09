@@ -8,7 +8,6 @@ const navLinks = [
   { name: "EXPERIENCE", path: "/training" },
   { name: "EDUCATION", path: "/education" },
   { name: "PROJECTS", path: "/projects" },
-  { name: "CERTIFICATES", path: "/certificates" },
   { name: "ACHIEVEMENTS", path: "/achievements" },
   { name: "CONTACT", path: "/contact" },
 ];
@@ -80,7 +79,6 @@ const Navbar = () => {
                 link.path === "/training" ||
                 link.path === "/education" ||
                 link.path === "/projects" ||
-                link.path === "/certificates" ||
                 link.path === "/achievements" ||
                 link.path === "/contact";
               const isActive =

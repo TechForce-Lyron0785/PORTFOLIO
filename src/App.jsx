@@ -8,7 +8,6 @@ import Skills from './components/Skills';
 import Training from './components/Training';
 import Education from './components/Education';
 import Projects from './components/Projects';
-import Certificates from './components/Certificates';
 import Achievements from './components/Achievements';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -95,7 +94,6 @@ function App() {
               <Route path="/training" element={<PageTransition><Training /></PageTransition>} />
               <Route path="/education" element={<PageTransition><Education /></PageTransition>} />
               <Route path="/projects" element={<PageTransition><Projects /></PageTransition>} />
-              <Route path="/certificates" element={<PageTransition><Certificates /></PageTransition>} />
               <Route path="/achievements" element={<PageTransition><Achievements /></PageTransition>} />
               <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
             </Routes>
