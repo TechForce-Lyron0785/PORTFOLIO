@@ -16,15 +16,12 @@ const navLinks = [
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(() =>
+    document.documentElement.classList.contains("dark")
+  );
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    // Check initial preference
-    if (document.documentElement.classList.contains("dark")) {
-      setIsDark(true);
-    }
-
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
@@ -34,13 +31,10 @@ const Navbar = () => {
   }, []);
 
   const toggleTheme = () => {
-    if (isDark) {
-      document.documentElement.classList.remove("dark");
-      setIsDark(false);
-    } else {
-      document.documentElement.classList.add("dark");
-      setIsDark(true);
-    }
+    const nextIsDark = !isDark;
+    document.documentElement.classList.toggle("dark", nextIsDark);
+    localStorage.setItem("theme", nextIsDark ? "dark" : "light");
+    setIsDark(nextIsDark);
   };
 
   return (
