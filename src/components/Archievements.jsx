@@ -65,16 +65,16 @@ const Achievements = () => {
       </div>
 
       {/* Profile Cards Grid */}
-      <div className="max-w-[1400px] w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20 px-4">
+      <div className="w-full flex justify-center mb-20 px-4">
         {codingProfiles.map((profile, index) => (
           <div
             key={index}
-            className={`bg-white/80 dark:bg-[#0a111a]/80 backdrop-blur-xl rounded-[28px] p-1 border border-white/50 dark:border-white/5 shadow-xl transition-all duration-500 hover:-translate-y-2 group overflow-hidden ${profile.darkColor}`}
+            className={`w-full max-w-[680px] bg-white/80 dark:bg-[#0a111a]/80 backdrop-blur-xl rounded-[28px] p-1 border border-white/50 dark:border-white/5 shadow-xl transition-all duration-500 hover:-translate-y-2 group overflow-hidden ${profile.darkColor}`}
           >
-            <div className="p-6 h-full flex flex-col">
+            <div className="p-10 h-full flex flex-col">
               <div className="flex justify-between items-start mb-6">
                 <div
-                  className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${profile.color} flex items-center justify-center text-white shadow-lg transition-transform duration-500 group-hover:rotate-[10deg]`}
+                  className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${profile.color} flex items-center justify-center text-white shadow-lg transition-transform duration-500 group-hover:rotate-[10deg]`}
                 >
                   {profile.icon}
                 </div>
@@ -88,10 +88,10 @@ const Achievements = () => {
                 </a>
               </div>
 
-              <h3 className="text-[20px] font-black text-[#2A3B4C] dark:text-white leading-tight">
+              <h3 className="text-[26px] font-black text-[#2A3B4C] dark:text-white leading-tight">
                 {profile.name}
               </h3>
-              <p className="text-[#556987] dark:text-[#20A274]/80 font-bold text-[13px] tracking-wide mb-4">
+              <p className="text-[#556987] dark:text-[#20A274]/80 font-bold text-[15px] tracking-wide mb-4">
                 @{profile.username}
               </p>
 
@@ -111,7 +111,7 @@ const Achievements = () => {
                 ))}
               </div>
 
-              <p className="text-[#556987] dark:text-gray-400 text-[13px] leading-[1.6] font-medium mb-4 flex-grow">
+              <p className="text-[#556987] dark:text-gray-400 text-[15px] leading-[1.6] font-medium mb-4 flex-grow">
                 {profile.description}
               </p>
 
