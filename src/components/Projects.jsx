@@ -2,15 +2,15 @@ import React, { useState } from "react";
 import { Github, ExternalLink, Layers } from "lucide-react";
 import { AnimatePresence } from "framer-motion";
 
-import image1 from "../assets/departmentMS.png";
-import image2 from "../assets/wanderLust.png";
-import image3 from "../assets/AirQuality.png";
-import image4 from "../assets/Pixora.jpg";
-import image5 from "../assets/Career.png";
-import image6 from "../assets/Rent.png";
-import image7 from "../assets/sprint_plans.png";
-import image8 from "../assets/Quizzard.png";
-import image9 from "../assets/profile1.png";
+import image1 from "../assets/image1.png";
+import image2 from "../assets/image2.png";
+import image3 from "../assets/image3.png";
+import image4 from "../assets/image4.jpg";
+import image5 from "../assets/image5.png";
+import image6 from "../assets/image6.png";
+import image7 from "../assets/image7.png";
+import image8 from "../assets/image8.png";
+import image9 from "../assets/image9.png";
 
 const Projects = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
