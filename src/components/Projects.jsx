@@ -179,19 +179,11 @@ const Projects = () => {
         ))}
       </div>
 
-      <motion.div
-        layout
-        className="max-w-[1300px] w-full grid grid-cols-1 md:grid-cols-2 gap-10 px-4 relative z-10"
-      >
+      <div className="max-w-[1300px] w-full grid grid-cols-1 md:grid-cols-2 gap-10 px-4 relative z-10">
         <AnimatePresence mode="popLayout">
           {filteredProjects.map((project, index) => (
-            <motion.div
+            <div
               key={project.title + index}
-              layout
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
-              transition={{ duration: 0.4, ease: "easeOut" }}
               className="flex flex-col rounded-[32px] overflow-hidden shadow-2xl bg-[#EBEBEB] dark:bg-[#EBEBEB] transform hover:-translate-y-2 transition-all duration-500 group"
             >
               {/* Top Image Section */}
@@ -281,10 +273,10 @@ const Projects = () => {
                   ))}
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </AnimatePresence>
-      </motion.div>
+      </div>
 
       <style jsx>{`
         .line-clamp-3 {

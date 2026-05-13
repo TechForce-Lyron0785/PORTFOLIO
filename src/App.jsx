@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import FeatureCards from "./components/Features";
@@ -45,12 +45,7 @@ function App() {
         )}
       </AnimatePresence>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 0.2 }}
-        className="relative overflow-x-hidden min-h-screen text-[#2A3B4C] dark:text-gray-200 transition-colors duration-300"
-      >
+      <div className="relative overflow-x-hidden min-h-screen text-[#2A3B4C] dark:text-gray-200 transition-colors duration-300">
         {/* Background abstract decorations */}
         <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
           <Particles
@@ -146,7 +141,7 @@ function App() {
             <Footer />
           </main>
         </div>
-      </motion.div>
+      </div>
     </>
   );
 }
