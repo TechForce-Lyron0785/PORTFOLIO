@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Github, ExternalLink, Layers } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 
 import image1 from "../assets/departmentMS.png";
 import image2 from "../assets/wanderLust.png";
